@@ -18,13 +18,13 @@ class BPCLI_BP_Command extends WP_CLI_Command {
 	/**
 	 * List groups
 	 */
-	public function group( $args ) {
+	public function group( $args, $assoc_args ) {
 		if ( ! bp_is_active( 'groups' ) ) {
 			WP_CLI::error( 'The Groups component is not active.' );
 		}
 
-		$g = new BPCLI_Group();
-		$g->do( $args );
+		$g = new BPCLI_Group( $args, $assoc_args );
+		$g->run();
 	}
 }
 WP_CLI::add_command( 'bp', 'BPCLI_BP_Command' );
