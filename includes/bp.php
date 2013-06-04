@@ -17,6 +17,7 @@ class BPCLI_BP_Command extends WP_CLI_Command {
 
 	/**
 	 * List groups
+	 * Also, foo
 	 */
 	public function group( $args, $assoc_args ) {
 		if ( ! bp_is_active( 'groups' ) ) {
@@ -24,6 +25,7 @@ class BPCLI_BP_Command extends WP_CLI_Command {
 		}
 
 		$g = new BPCLI_Group( $args, $assoc_args );
+		// FOO!
 		$g->run();
 	}
 }
