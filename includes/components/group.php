@@ -76,6 +76,8 @@ class BPCLI_Group extends BPCLI_Component {
 			$user_id = (int) username_exists( $r['user_id'] );
 		} else {
 			$user_id = $r['user_id'];
+			$user_obj = new WP_User( $user_id );
+			$user_id = $user_obj->ID;
 		}
 
 		if ( empty( $user_id ) ) {
@@ -95,14 +97,12 @@ class BPCLI_Group extends BPCLI_Component {
 				$member->promote( $r['role'] );
 			}
 
-			$user_obj = new WP_User( $user_id );
-
 			$success = sprintf(
 				'Added user #%d (%s) to group #%d (%s) as %s',
-				$group_id,
-				$group_obj->name,
 				$user_id,
 				$user_obj->user_login,
+				$group_id,
+				$group_obj->name,
 				$r['role']
 			);
 			WP_CLI::success( $success );
