@@ -26,5 +26,10 @@ class BPCLI_BP_Command extends WP_CLI_Command {
 		$g = new BPCLI_Group( $args, $assoc_args );
 		$g->run();
 	}
+
+	public function user( $args, $assoc_args ) {
+		$u = new BPCLI_User( $args, $assoc_args );
+		$u->run();
+	}
 }
 WP_CLI::add_command( 'bp', 'BPCLI_BP_Command' );
