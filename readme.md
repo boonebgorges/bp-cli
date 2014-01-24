@@ -1,1 +1,8 @@
-This plugin doesn't do anything yet, but when it does, it'll be a set of BuddyPress commands for <a href="http://github.com/wp-cli/wp-cli">WP-CLI</a>, and it will rule.
+# Hey
+
+## Don't use me
+
+### Use this instead
+
+https://github.com/boonebgorges/wp-cli-buddypress
+
